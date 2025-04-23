@@ -112,7 +112,7 @@
                     android:id="@+id/tv_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="fufufafa26@gmail.com"
+                    android:text="miko26@gmail.com"
                     android:textColor="@android:color/black"
                     android:textStyle="bold" />
             </LinearLayout>
