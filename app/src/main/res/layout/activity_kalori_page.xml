@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp">
 
@@ -49,17 +49,17 @@
                 android:layout_height="40dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                app:cardBackgroundColor="#F8F8F8"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="0dp"
-                app:cardBackgroundColor="#F8F8F8">
+                app:cardElevation="0dp">
 
                 <ImageView
                     android:id="@+id/iconKalori"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/makanan"
-                    android:contentDescription="Icon Kalori" />
+                    android:contentDescription="Icon Kalori"
+                    android:src="@drawable/makanan" />
             </androidx.cardview.widget.CardView>
 
             <!-- Label Kalori Harian -->
@@ -67,15 +67,14 @@
                 android:id="@+id/textKaloriHarian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kalori Harian"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:layout_toEndOf="@id/iconKaloriContainer"
                 android:layout_alignTop="@id/iconKaloriContainer"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                />
+                android:layout_toEndOf="@id/iconKaloriContainer"
+                android:text="Kalori Harian"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <!-- Tombol Tambah Kalori -->
             <ImageButton
@@ -95,26 +94,26 @@
                 android:id="@+id/kaloriSaatIni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="900 Kalori"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
                 android:layout_below="@id/iconKaloriContainer"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:text="900 Kalori"
+                android:textColor="#000000"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
             <!-- Target Kalori -->
             <TextView
                 android:id="@+id/targetKalori"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/kaloriSaatIni"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp"
                 android:text="Target : 1800 Kalori"
                 android:textColor="#666666"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_below="@id/kaloriSaatIni"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="8dp" />
+                android:textStyle="bold" />
 
             <!-- Progress Bar -->
             <ProgressBar
@@ -124,11 +123,131 @@
                 android:layout_height="20dp"
                 android:layout_below="@id/targetKalori"
                 android:layout_marginTop="16dp"
-                android:progress="78"
                 android:max="100"
+                android:progress="78"
                 android:progressDrawable="@drawable/progress_bar_kalori" />
 
         </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardInformasiNutrisi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/cardKalori"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Header dengan Icon -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/nutrisi"
+                    android:contentDescription="Icon Nutrisi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Informasi nutrisi yang di konsumsi"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Karbohidrat -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#FBBEF8"
+                    android:background="@drawable/circle_dot" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Karbohidrat 109 g"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Lemak -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#FFE9A6"
+                    android:background="@drawable/circle_dot" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lemak 13 g"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Protein -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#C6F3F9"
+                    android:background="@drawable/circle_dot" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Protein 34 g"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
