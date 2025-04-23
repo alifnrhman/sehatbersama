@@ -3,7 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#CCCCCC</color>
-    <color name="purple_500">#6200EE</color> <!-- contoh warna aktif -->
     <color name="active_dot">#71BEF4</color>
     <color name="inactive_dot">#CCCCCC</color>
     <color name="blue">#71BEF4</color>
