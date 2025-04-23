@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".KaloriPage">
+
+    <!-- Tombol kembali -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/arrow_back_circle"
+        android:contentDescription="Back"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardKalori"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Icon Kalori dalam circle -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iconKaloriContainer"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#F8F8F8">
+
+                <ImageView
+                    android:id="@+id/iconKalori"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/makanan"
+                    android:contentDescription="Icon Kalori" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Label Kalori Harian -->
+            <TextView
+                android:id="@+id/textKaloriHarian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kalori Harian"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_toEndOf="@id/iconKaloriContainer"
+                android:layout_alignTop="@id/iconKaloriContainer"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                />
+
+            <!-- Tombol Tambah Nutrisi -->
+            <ImageButton
+                android:id="@+id/addKaloriButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignTop="@id/iconKaloriContainer"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/circle_button_background"
+                android:contentDescription="Add Kalori"
+                android:src="@android:drawable/ic_input_add"
+                app:tint="#FFFFFF" />
+
+            <!-- Kalori Saat Ini -->
+            <TextView
+                android:id="@+id/kaloriSaatIni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="900 Kalori"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_below="@id/iconKaloriContainer"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp" />
+
+            <!-- Target Kalori -->
+            <TextView
+                android:id="@+id/targetKalori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Target : 1800 Kalori"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_below="@id/kaloriSaatIni"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp" />
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressKalori"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/targetKalori"
+                android:layout_marginTop="16dp"
+                android:progress="78"
+                android:max="100"
+                android:progressDrawable="@drawable/progress_bar_kalori" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
