@@ -69,12 +69,4 @@ public class KaloriPage extends AppCompatActivity {
 
         dialog.show();
     }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(KaloriPage.this, HomePageActivity.class);
-        startActivity(intent);
-        finish();
-    }
 }

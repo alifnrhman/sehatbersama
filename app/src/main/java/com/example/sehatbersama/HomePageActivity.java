@@ -38,6 +38,7 @@ public class HomePageActivity extends AppCompatActivity {
         calorieTrackingCard.setOnClickListener(v -> {
             Intent intent = new Intent(HomePageActivity.this, KaloriPage.class);
             startActivity(intent);
+            finish();
         });
     }
 
