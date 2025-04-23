@@ -77,7 +77,7 @@
                 android:layout_marginTop="8dp"
                 />
 
-            <!-- Tombol Tambah Nutrisi -->
+            <!-- Tombol Tambah Kalori -->
             <ImageButton
                 android:id="@+id/addKaloriButton"
                 android:layout_width="48dp"
