@@ -10,6 +10,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -20,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class KaloriPage extends AppCompatActivity {
 
+    private LinearLayout btnBeranda, btnAirHarian, btnKaloriHarian;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,34 @@ public class KaloriPage extends AppCompatActivity {
             return insets;
         });
 
+        btnBeranda = findViewById(R.id.btnBeranda);
+        btnAirHarian = findViewById(R.id.btnAirHarian);
+        btnKaloriHarian = findViewById(R.id.btnKaloriHarian);
+
+        btnBeranda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(KaloriPage.this, HomePageActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnAirHarian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(KaloriPage.this, AirHarianActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnKaloriHarian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Already on this page, do nothing or refresh
+            }
+        });
         // Tombol tambah kalori
         ImageButton btnTambah = findViewById(R.id.addKaloriButton);
         btnTambah.setOnClickListener(v -> showKaloriDialog());
