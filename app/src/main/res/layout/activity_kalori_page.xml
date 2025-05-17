@@ -73,7 +73,7 @@
                 android:layout_toEndOf="@id/iconKaloriContainer"
                 android:text="Kalori Harian"
                 android:textColor="#000000"
-                android:textSize="14sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <!-- Tombol Tambah Kalori -->
@@ -134,14 +134,15 @@
         android:id="@+id/cardInformasiNutrisi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/cardKalori"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/cardKalori">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -149,106 +150,216 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Header dengan Icon -->
+            <!-- Header with Icon and Title -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:layout_marginBottom="16dp">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:id="@+id/nutritionIcon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:src="@drawable/nutrisi"
-                    android:contentDescription="Icon Nutrisi" />
+                    android:contentDescription="Nutrition icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Informasi nutrisi yang di konsumsi"
+                    android:text="Nutrisi"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#000000"
-                    android:textSize="16sp" />
+                    android:layout_marginStart="8dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/addNutritionButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/ic_input_add"
+                    android:background="@drawable/circle_button_background"
+                    android:contentDescription="Add nutrition"
+                    app:tint="#FFFFFF" />
             </LinearLayout>
 
             <!-- Karbohidrat -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp"
-                android:gravity="center_vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
 
-                <View
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginEnd="8dp"
-                    android:backgroundTint="#FBBEF8"
-                    android:background="@drawable/circle_dot" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Karbohidrat 109 g"
-                    android:textColor="#000000"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Karbohidrat"
+                        android:textColor="#999999"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="109 / 198 g"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="55%"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/carbProgress"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="48dp"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="55"
+                        android:progressDrawable="@drawable/progress_bar_karb" />
+                </LinearLayout>
             </LinearLayout>
 
             <!-- Lemak -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp"
-                android:gravity="center_vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
 
-                <View
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginEnd="8dp"
-                    android:backgroundTint="#FFE9A6"
-                    android:background="@drawable/circle_dot" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lemak 13 g"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:textSize="14sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lemak"
+                        android:textColor="#999999"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="13 / 52 g"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30%"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/lemakProgress"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="12dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:progress="30"
+                        android:max="100"
+                        android:progressDrawable="@drawable/progress_bar_lemak" />
+                </LinearLayout>
             </LinearLayout>
 
             <!-- Protein -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:orientation="vertical">
 
-                <View
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginEnd="8dp"
-                    android:backgroundTint="#C6F3F9"
-                    android:background="@drawable/circle_dot" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Protein 34 g"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:textSize="14sp" />
-            </LinearLayout>
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Protein"
+                        android:textColor="#999999"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="34 / 122 g"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25%"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/proteinProgress"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="12dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="48dp"
+                        android:layout_gravity="center_vertical"
+                        android:progress="25"
+                        android:max="100"
+                        android:progressDrawable="@drawable/progress_bar_protein" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <!-- Bottom Navigation Bar -->
     <LinearLayout
         android:id="@+id/bottomNavBar"

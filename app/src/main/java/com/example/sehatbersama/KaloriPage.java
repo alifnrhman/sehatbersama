@@ -1,9 +1,11 @@
 package com.example.sehatbersama;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -63,8 +66,12 @@ public class KaloriPage extends AppCompatActivity {
             }
         });
         // Tombol tambah kalori
-        ImageButton btnTambah = findViewById(R.id.addKaloriButton);
-        btnTambah.setOnClickListener(v -> showKaloriDialog());
+        ImageButton btnTambahKalori = findViewById(R.id.addKaloriButton);
+        btnTambahKalori.setOnClickListener(v -> showKaloriDialog());
+
+        // Tombol tambah nutrisi
+        ImageButton btnTambahNutrisi = findViewById(R.id.addNutritionButton);
+        btnTambahNutrisi.setOnClickListener(v -> showNutritionPopup());
 
         // Tombol kembali ke HomePageActivity
         ImageButton backButton = findViewById(R.id.backButton);
@@ -98,5 +105,48 @@ public class KaloriPage extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+
+    private void showNutritionPopup() {
+        // Inflate layout popup
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View popupView = inflater.inflate(R.layout.dialog_nutrition_popup, null);
+
+        // Buat AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(popupView);
+        AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.show();
+
+        // Tombol Close
+        ImageButton btnClose = popupView.findViewById(R.id.btnClose);
+        btnClose.setOnClickListener(v -> dialog.dismiss());
+
+        // Tombol Simpan
+        Button btnSave = popupView.findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(v -> {
+            EditText targetCarb = popupView.findViewById(R.id.targetCarb);
+            EditText targetFat = popupView.findViewById(R.id.targetFat);
+            EditText targetProtein = popupView.findViewById(R.id.targetProtein);
+
+            EditText consumedCarb = popupView.findViewById(R.id.consumedCarb);
+            EditText consumedFat = popupView.findViewById(R.id.consumedFat);
+            EditText consumedProtein = popupView.findViewById(R.id.consumedProtein);
+
+            // Ambil nilai input (opsional bisa divalidasi/diproses)
+            String targetCarbVal = targetCarb.getText().toString();
+            String targetFatVal = targetFat.getText().toString();
+            String targetProteinVal = targetProtein.getText().toString();
+
+            String consumedCarbVal = consumedCarb.getText().toString();
+            String consumedFatVal = consumedFat.getText().toString();
+            String consumedProteinVal = consumedProtein.getText().toString();
+
+            // Contoh feedback
+            Toast.makeText(this, "Data nutrisi disimpan", Toast.LENGTH_SHORT).show();
+
+            dialog.dismiss();
+        });
     }
 }

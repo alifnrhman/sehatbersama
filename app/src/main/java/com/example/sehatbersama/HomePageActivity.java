@@ -62,57 +62,19 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton addNutritionButton = findViewById(R.id.addNutritionButton);
-        addNutritionButton.setOnClickListener(v -> showNutritionPopup());
-
         CardView calorieTrackingCard = findViewById(R.id.calorieTrackingCard);
         calorieTrackingCard.setOnClickListener(v -> {
             Intent intent = new Intent(HomePageActivity.this, KaloriPage.class);
             startActivity(intent);
             finish();
         });
-    }
 
-    private void showNutritionPopup() {
-        // Inflate layout popup
-        LayoutInflater inflater = LayoutInflater.from(this);
-        View popupView = inflater.inflate(R.layout.dialog_nutrition_popup, null);
-
-        // Buat AlertDialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setView(popupView);
-        AlertDialog dialog = builder.create();
-        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        dialog.show();
-
-        // Tombol Close
-        ImageButton btnClose = popupView.findViewById(R.id.btnClose);
-        btnClose.setOnClickListener(v -> dialog.dismiss());
-
-        // Tombol Simpan
-        Button btnSave = popupView.findViewById(R.id.btnSave);
-        btnSave.setOnClickListener(v -> {
-            EditText targetCarb = popupView.findViewById(R.id.targetCarb);
-            EditText targetFat = popupView.findViewById(R.id.targetFat);
-            EditText targetProtein = popupView.findViewById(R.id.targetProtein);
-
-            EditText consumedCarb = popupView.findViewById(R.id.consumedCarb);
-            EditText consumedFat = popupView.findViewById(R.id.consumedFat);
-            EditText consumedProtein = popupView.findViewById(R.id.consumedProtein);
-
-            // Ambil nilai input (opsional bisa divalidasi/diproses)
-            String targetCarbVal = targetCarb.getText().toString();
-            String targetFatVal = targetFat.getText().toString();
-            String targetProteinVal = targetProtein.getText().toString();
-
-            String consumedCarbVal = consumedCarb.getText().toString();
-            String consumedFatVal = consumedFat.getText().toString();
-            String consumedProteinVal = consumedProtein.getText().toString();
-
-            // Contoh feedback
-            Toast.makeText(this, "Data nutrisi disimpan", Toast.LENGTH_SHORT).show();
-
-            dialog.dismiss();
+        CardView waterTrackingCard = findViewById(R.id.waterTrackingCard);
+        waterTrackingCard.setOnClickListener(v -> {
+            Intent intent = new Intent(HomePageActivity.this, AirHarianActivity.class);
+            startActivity(intent);
+            finish();
         });
+
     }
 }

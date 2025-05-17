@@ -146,7 +146,7 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Calorie Tracking Card dengan RelativeLayout -->
+    <!-- Calorie Tracking Card  -->
     <androidx.cardview.widget.CardView
         android:id="@+id/calorieTrackingCard"
         android:layout_width="match_parent"
@@ -293,25 +293,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nutrisi"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:text="Informasi nutrisi yang di konsumsi"
                     android:textColor="#333333"
-                    android:layout_marginStart="8dp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1" />
-
-                <ImageButton
-                    android:id="@+id/addNutritionButton"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@android:drawable/ic_input_add"
-                    android:background="@drawable/circle_button_background"
-                    android:contentDescription="Add nutrition"
-                    app:tint="#FFFFFF" />
             </LinearLayout>
 
             <!-- Karbohidrat -->
