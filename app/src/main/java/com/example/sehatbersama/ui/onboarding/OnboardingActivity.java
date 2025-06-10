@@ -1,9 +1,8 @@
-package com.example.sehatbersama;
+package com.example.sehatbersama.ui.onboarding;
 
 import android.os.Bundle;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,10 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 import androidx.viewpager2.widget.ViewPager2.PageTransformer;
-import androidx.recyclerview.widget.RecyclerView;
-import android.view.animation.AnimationUtils;
-import android.view.animation.Animation;
-import android.widget.ImageView;
+
+import com.example.sehatbersama.R;
+import com.example.sehatbersama.ui.auth.AuthActivity;
 
 import java.util.ArrayList;
 import java.util.List;

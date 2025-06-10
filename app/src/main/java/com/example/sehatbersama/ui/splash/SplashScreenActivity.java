@@ -1,10 +1,13 @@
-package com.example.sehatbersama;
+package com.example.sehatbersama.ui.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.sehatbersama.R;
+import com.example.sehatbersama.ui.onboarding.OnboardingActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private static final int SPLASH_DELAY = 2000; // 2 detik

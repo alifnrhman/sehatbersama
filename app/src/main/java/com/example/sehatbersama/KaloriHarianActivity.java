@@ -17,12 +17,11 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class KaloriPage extends AppCompatActivity {
+public class KaloriHarianActivity extends AppCompatActivity {
 
     private LinearLayout btnBeranda, btnAirHarian, btnKaloriHarian;
     @Override
@@ -44,7 +43,7 @@ public class KaloriPage extends AppCompatActivity {
         btnBeranda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(KaloriPage.this, HomePageActivity.class);
+                Intent intent = new Intent(KaloriHarianActivity.this, HomePageActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -53,7 +52,7 @@ public class KaloriPage extends AppCompatActivity {
         btnAirHarian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(KaloriPage.this, AirHarianActivity.class);
+                Intent intent = new Intent(KaloriHarianActivity.this, AirHarianActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -76,9 +75,9 @@ public class KaloriPage extends AppCompatActivity {
         // Tombol kembali ke HomePageActivity
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
-            Intent intent = new Intent(KaloriPage.this, HomePageActivity.class);
+            Intent intent = new Intent(KaloriHarianActivity.this, HomePageActivity.class);
             startActivity(intent);
-            finish(); // Supaya tidak bisa kembali ke KaloriPage lagi
+            finish(); // Supaya tidak bisa kembali ke KaloriHarianActivity lagi
         });
     }
 

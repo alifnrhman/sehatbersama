@@ -1,15 +1,9 @@
 package com.example.sehatbersama;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,7 +50,7 @@ public class HomePageActivity extends AppCompatActivity {
         btnKaloriHarian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePageActivity.this, KaloriPage.class);
+                Intent intent = new Intent(HomePageActivity.this, KaloriHarianActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -64,7 +58,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         CardView calorieTrackingCard = findViewById(R.id.calorieTrackingCard);
         calorieTrackingCard.setOnClickListener(v -> {
-            Intent intent = new Intent(HomePageActivity.this, KaloriPage.class);
+            Intent intent = new Intent(HomePageActivity.this, KaloriHarianActivity.class);
             startActivity(intent);
             finish();
         });

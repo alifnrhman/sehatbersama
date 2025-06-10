@@ -13,19 +13,19 @@
         android:theme="@style/Theme.SehatBersama"
         tools:targetApi="31">
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.auth.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.auth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".AuthActivity"
+            android:name=".ui.auth.AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".OnboardingActivity"
+            android:name=".ui.onboarding.OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".ui.splash.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,13 +34,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
             android:name=".HomePageActivity"
             android:exported="true" />
         <activity
-            android:name=".KaloriPage"
+            android:name=".KaloriHarianActivity"
             android:exported="true" />
         <activity
             android:name=".AirHarianActivity"

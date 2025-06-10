@@ -1,4 +1,4 @@
-package com.example.sehatbersama;
+package com.example.sehatbersama.ui.onboarding;
 
 public class OnboardingItem {
     int imageResId;

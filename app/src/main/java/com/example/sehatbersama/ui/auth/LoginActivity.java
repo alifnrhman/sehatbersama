@@ -1,4 +1,4 @@
-package com.example.sehatbersama;
+package com.example.sehatbersama.ui.auth;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.sehatbersama.HomePageActivity;
+import com.example.sehatbersama.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnLogin;
